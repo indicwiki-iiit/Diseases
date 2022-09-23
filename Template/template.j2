@@ -1,0 +1,135 @@
+{%- macro Infobox(Name, info_Specialty, info_Symptoms, info_Usual_onset, info_Duration, info_Causes, info_Risk_factors, info_Diagnostic_method, info_Prevention, info_Treatment, info_Prognosis, info_Frequency, info_Medication, imageURL) -%}
+{{'{{Infobox medical condition'}}
+|name   = {{Name }}
+{% if imageURL != 'NaN' and imageURL != '' -%}
+|image       = {{imageURL}}
+|caption     = {{Name}}
+{%- endif %}
+{%- if  info_Specialty !='NaN' and info_Specialty != '' %}
+|specialty   = {{info_Specialty}}
+{%- endif %}
+{%- if info_Symptoms != 'NaN' and info_Symptoms != '' %}
+|symptoms = {{info_Symptoms}}
+{%- endif %}
+{%- if info_Usual_onset != 'NaN' and info_Usual_onset != '' %}
+|onset        = {{info_Usual_onset}}
+{%- endif %}
+{%- if info_Duration != 'NaN' and info_Duration != '' %}
+|duration   = {{info_Duration}} 
+{%- endif %}
+{%- if info_Causes != 'NaN' and info_Causes != '' %}
+|causes         = {{info_Causes }}
+{%- endif %}
+{%- if info_Risk_factors != 'NaN' and info_Risk_factors != '' %}
+|risks            = {{info_Risk_factors}}
+{%- endif %}
+{%- if info_Diagnostic_method != 'NaN' and info_Diagnostic_method != '' %}
+|diagnosis            = {{info_Diagnostic_method}}
+{%- endif %}
+{%- if info_Prevention != 'NaN' and info_Prevention != '' %}
+|prevention             = {{info_Prevention}}
+{%- endif %}
+{%- if info_Treatment != 'NaN' and info_Treatment != '' %}
+|treatment            = {{info_Treatment}}
+{%- endif %}
+{%- if info_Prognosis != 'NaN' and info_Prognosis != '' %}
+|prognosis     = {{info_Prognosis}}
+{%- endif %}
+{%- if info_Medication != 'NaN' and info_Medication != '' %}
+|medication = {{info_Medication}}
+{%- endif -%}
+{%- if info_Frequency != 'NaN' and info_Frequency != '' %}
+|frequency = {{info_Frequency}}
+{%- endif -%}
+{{'\n}}'}}
+{%- endmacro -%}
+
+{%- macro overview(Overview) -%}
+	{% if Overview != 'NaN' and Overview != '' %}
+==अवलोकन==
+{{Overview}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro symptoms(Symptoms) -%}
+	{% if Symptoms != 'NaN' and Symptoms != '' %}
+==[[लक्षण]]==
+{{Symptoms}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro causes(Causes) -%}
+	{% if Causes != 'NaN' and Causes != '' %}
+==कारण==
+{{Causes}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro risks(Risk_factors) -%}
+	{% if Risk_factors != 'NaN' and Risk_factors != '' %}
+==जोखिम कारक==
+{{Risk_factors}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro diagnosis(Diagnosis) -%}
+	{% if Diagnosis != 'NaN' and Diagnosis != '' %}
+==निदान==
+{{Diagnosis}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro treatment(Treatment) -%}
+	{% if Treatment != 'NaN' and Treatment != '' %}
+==इलाज==
+{{Treatment}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro remedies(Remedies) -%}
+	{% if Remedies != 'NaN' and Remedies != '' %}
+==उपचार==
+{{Remedies}}
+	{% endif %}
+{%- endmacro %}
+
+{%- macro medication(Medication) -%}
+	{% if Medication != 'NaN' and Medication != '' %}
+==दवाई==
+{{Medication}}
+	{% endif %}
+{%- endmacro %}
+
+
+{%- macro references_categories(Name, link, link2) -%} 
+
+{% if link != 'NaN' and link != '' %}
+==सन्दर्भ==
+*[{{link}} मेयो क्लिनिक पर {{Name}}]
+{%- endif %}
+{% if link2 != 'NaN' and link2 != '' -%}
+*[{{link2}} एनएचएस पर {{Name}}]
+{% endif %}
+[[श्रेणी:रोग]]
+[[category:hiwiki-diseases]]
+{% endmacro %}
+
+{{- Infobox(Name, info_Specialty, info_Symptoms, info_Usual_onset, info_Duration, info_Causes, info_Risk_factors, info_Diagnostic_method, info_Prevention, info_Treatment, info_Prognosis, info_Frequency, info_Medication, imageURL) -}}
+
+{{ overview(Overview) -}}
+
+{{ symptoms(Symptoms) -}}
+
+{{ causes(Causes) -}}
+
+{{ risks(Risk_factors) -}}
+
+{{ diagnosis(Diagnosis) -}}
+
+{{ treatment(Treatment) -}}
+
+{{ remedies(Remedies) -}}
+
+{{ medication(Medication) -}}
+
+{{ references_categories(Name, link, link2) -}}
